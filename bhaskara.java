@@ -1,30 +1,20 @@
-import java.util.Scanner;
-
 public class Bhaskara {
-   public static void main(String[] args) {
-      Scanner input = new Scanner(System.in);
+    public static void main(String[] args) {
+        double a = 2;
+        double b = 5;
+        double c = -3;
 
-      System.out.print("Digite o valor de a: ");
-      double a = input.nextDouble();
+        double delta = Math.pow(b, 2) - 4 * a * c;
 
-      System.out.print("Digite o valor de b: ");
-      double b = input.nextDouble();
-
-      System.out.print("Digite o valor de c: ");
-      double c = input.nextDouble();
-
-      double delta = b * b - 4 * a * c;
-      double x1, x2;
-
-      if (delta >= 0) {
-         x1 = (-b + Math.sqrt(delta)) / (2 * a);
-         x2 = (-b - Math.sqrt(delta)) / (2 * a);
-
-         System.out.println("As raízes são " + x1 + " e " + x2);
-      } else {
-         System.out.println("Não existem raízes reais.");
-      }
-
-      input.close();
-   }
+        if (delta < 0) {
+            System.out.println("Não há raízes reais");
+        } else if (delta == 0) {
+            double x = -b / (2 * a);
+            System.out.println("A única raiz é " + x);
+        } else {
+            double x1 = (-b + Math.sqrt(delta)) / (2 * a);
+            double x2 = (-b - Math.sqrt(delta)) / (2 * a);
+            System.out.println("As raízes são " + x1 + " e " + x2);
+        }
+    }
 }
